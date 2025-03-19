@@ -1,0 +1,2 @@
+2025-03-18 15:39:02,392 - drum_transcription - INFO - Starting training with arguments: Namespace(config='configs/test_config.yaml', output_dir='../models/test_run', data_dir='../data/synthetic', resume=None, seed=42, gpu=0, num_workers=2)
+2025-03-18 15:39:02,393 - drum_transcription - INFO - Using device: cuda:0

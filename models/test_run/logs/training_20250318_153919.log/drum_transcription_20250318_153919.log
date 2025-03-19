@@ -1,0 +1,2 @@
+2025-03-18 15:39:19,214 - drum_transcription - INFO - Starting training with arguments: Namespace(config='C:/Users/Riley/Desktop/SummerProject/2023AndBeyond/Rimshot-IP-Compliant/drum-transcription/configs/test_config.yaml', output_dir='../models/test_run', data_dir='../data/synthetic', resume=None, seed=42, gpu=0, num_workers=2)
+2025-03-18 15:39:19,214 - drum_transcription - INFO - Using device: cuda:0

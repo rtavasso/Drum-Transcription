@@ -1,0 +1,46 @@
+2025-03-18 13:53:14,154 - train - INFO - Starting training run: drum_transcription_basic_20250318_135314
+2025-03-18 13:53:14,154 - train - INFO - Configuration loaded from: configs/train_config.yaml
+2025-03-18 13:53:14,154 - train - INFO - Output directory: models\drum_transcription_basic_20250318_135314
+2025-03-18 13:53:14,155 - train - INFO - Overriding data directory with: data/synthetic
+2025-03-18 13:53:14,173 - train - INFO - Configuration saved to: models\drum_transcription_basic_20250318_135314\config.yaml
+2025-03-18 13:53:14,204 - train - INFO - Random seed set to: 42
+2025-03-18 13:53:14,205 - train - INFO - Using CPU for training
+2025-03-18 13:53:14,206 - train - INFO - Setting up datasets and data loaders
+2025-03-18 13:53:14,206 - train - INFO - Detected synthetic dataset structure, creating custom data loaders
+2025-03-18 13:53:14,210 - train - INFO - Training dataset: 3 samples
+2025-03-18 13:53:14,210 - train - INFO - Validation dataset: 1 samples
+2025-03-18 13:53:14,211 - train - INFO - Test dataset: 1 samples (not used during training)
+2025-03-18 13:53:14,211 - train - INFO - Initializing model
+2025-03-18 13:53:14,349 - train - INFO - Model created: CnnLstmTranscriber
+2025-03-18 13:53:14,349 - train - INFO - Model parameters: 2,406,226
+2025-03-18 13:53:14,351 - train - INFO - Starting model training
+2025-03-18 13:53:17,777 - train - ERROR - Error during training: Expected 3-dimensional input for 3-dimensional weight [16, 1, 7], but got 4-dimensional input of size [1, 1, 229, 431] instead
+2025-03-18 13:53:17,778 - train - ERROR - Expected 3-dimensional input for 3-dimensional weight [16, 1, 7], but got 4-dimensional input of size [1, 1, 229, 431] instead
+Traceback (most recent call last):
+  File "scripts/train_model.py", line 343, in main
+    model, history = train_model(
+  File "C:\Users\Riley\Desktop\SummerProject\2023AndBeyond\Rimshot-IP-Compliant\drum-transcription\src\train.py", line 131, in train_model
+    train_metrics = train_epoch(
+  File "C:\Users\Riley\Desktop\SummerProject\2023AndBeyond\Rimshot-IP-Compliant\drum-transcription\src\train.py", line 305, in train_epoch
+    predictions = model(audio)
+  File "C:\Users\Riley\anaconda3\lib\site-packages\torch\nn\modules\module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "scripts/train_model.py", line 311, in forward_with_preprocessing
+    return original_forward(x, *args, **kwargs)
+  File "C:\Users\Riley\Desktop\SummerProject\2023AndBeyond\Rimshot-IP-Compliant\drum-transcription\src\model.py", line 307, in forward
+    features = self.encoder(x)
+  File "C:\Users\Riley\anaconda3\lib\site-packages\torch\nn\modules\module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "C:\Users\Riley\Desktop\SummerProject\2023AndBeyond\Rimshot-IP-Compliant\drum-transcription\src\model.py", line 178, in forward
+    return self.cnn(x)
+  File "C:\Users\Riley\anaconda3\lib\site-packages\torch\nn\modules\module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "C:\Users\Riley\anaconda3\lib\site-packages\torch\nn\modules\container.py", line 141, in forward
+    input = module(input)
+  File "C:\Users\Riley\anaconda3\lib\site-packages\torch\nn\modules\module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "C:\Users\Riley\anaconda3\lib\site-packages\torch\nn\modules\conv.py", line 301, in forward
+    return self._conv_forward(input, self.weight, self.bias)
+  File "C:\Users\Riley\anaconda3\lib\site-packages\torch\nn\modules\conv.py", line 297, in _conv_forward
+    return F.conv1d(input, weight, bias, self.stride,
+RuntimeError: Expected 3-dimensional input for 3-dimensional weight [16, 1, 7], but got 4-dimensional input of size [1, 1, 229, 431] instead
